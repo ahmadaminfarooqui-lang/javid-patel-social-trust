@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Javid Patel Social Trust | Emergency Medical Support</title>
+  <meta name="description" content="Javid Patel Social Trust helps people during medical emergencies, accidents, surgeries and financial hardship. Support Altaf Patel's recovery." />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:#f8f7f0;color:#222;line-height:1.6}
+    :root{--green:#064b34;--dark:#033322;--gold:#d6a437;--red:#c62828;--light:#f8f7f0}
+
+    header{
+      position:sticky;top:0;z-index:1000;background:var(--green);color:white;
+      padding:12px 7%;display:flex;justify-content:space-between;align-items:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.2)
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand img{width:55px;height:55px;border-radius:50%;background:white;object-fit:cover}
+    nav a{color:white;text-decoration:none;margin:0 10px;font-weight:600}
+    .btn{
+      display:inline-block;background:var(--gold);color:#111;padding:12px 22px;
+      border-radius:30px;text-decoration:none;font-weight:700;border:none;cursor:pointer;
+      transition:.3s
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.25)}
+    .btn-red{background:var(--red);color:white}
+
+    .hero{
+      background:linear-gradient(rgba(3,51,34,.88),rgba(3,51,34,.9)),
+      url("https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;background-position:center;color:white;text-align:center;
+      padding:110px 7%
+    }
+    .hero h1{font-size:48px;color:var(--gold);margin-bottom:10px}
+    .hero h2{font-size:28px;margin-bottom:15px}
+    .hero p{max-width:780px;margin:0 auto 25px;font-size:18px}
+
+    section{padding:70px 7%}
+    .title{text-align:center;margin-bottom:38px}
+    .title h2{font-size:36px;color:var(--green)}
+    .title p{color:#555}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{
+      background:white;border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.08);
+      transition:.3s
+    }
+    .card:hover{transform:translateY(-7px)}
+    .stat{text-align:center;border-bottom:5px solid var(--gold)}
+    .stat h3{font-size:34px;color:var(--green)}
+
+    .about{max-width:1000px;margin:auto}
+    .mission{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+    .mission .card{border-left:5px solid var(--gold)}
+
+    .campaign{
+      display:grid;grid-template-columns:1fr 1.3fr;gap:30px;overflow:hidden;padding:0
+    }
+    .campaign img{width:100%;height:100%;min-height:430px;object-fit:cover}
+    .campaign-content{padding:35px}
+    .tag{display:inline-block;background:var(--red);color:white;padding:6px 14px;border-radius:20px;margin-bottom:15px}
+    .campaign h2{font-size:32px;color:var(--green);margin-bottom:12px}
+    .info{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}
+    .info div{background:#f2f0e6;padding:14px;border-radius:12px;border-left:4px solid var(--gold)}
+    .fund{
+      background:var(--green);color:white;text-align:center;border-radius:16px;padding:22px;margin:22px 0
+    }
+    .fund h3{color:var(--gold);font-size:28px}
+
+    .donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+    .qr{text-align:center}
+    .qr img{width:270px;max-width:100%;border:8px solid var(--green);border-radius:18px;margin-bottom:15px}
+    .pay span{display:inline-block;background:#eee;padding:8px 12px;border-radius:20px;margin:5px;font-size:14px}
+    .bank-row{padding:12px 0;border-bottom:1px solid #ddd}
+    .bank-row strong{color:var(--green)}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    input,textarea{width:100%;padding:14px;border:1px solid #ccc;border-radius:10px;margin-bottom:14px;font-size:15px}
+    textarea{height:120px}
+
+    footer{background:var(--dark);color:white;text-align:center;padding:35px 7%}
+    footer h2{color:var(--gold);margin-bottom:8px}
+
+    .floating-donate{
+      position:fixed;right:20px;bottom:88px;z-index:999;background:var(--red);color:white;
+      animation:float 2.4s infinite
+    }
+    .whatsapp{
+      position:fixed;right:20px;bottom:25px;background:#25D366;color:white;text-decoration:none;
+      padding:15px 18px;border-radius:50px;font-weight:700;z-index:999;animation:pulse 1.8s infinite
+    }
+
+    .fade{animation:fadeUp .9s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+    @media(max-width:850px){
+      header{flex-direction:column;gap:10px}
+      nav{text-align:center}
+      nav a{display:inline-block;margin:5px}
+      .hero h1{font-size:34px}
+      .hero h2{font-size:22px}
+      .stats,.mission,.campaign,.donate-grid,.contact-grid{grid-template-columns:1fr}
+      .campaign img{min-height:300px}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="Javid Patel Social Trust Logo">
+    <span>Javid Patel Social Trust</span>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#case">Emergency Case</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#donate" class="btn">Donate Now</a>
+</header>
+
+<section class="hero" id="home">
+  <h1>Javid Patel Social Trust</h1>
+  <h2>Humanity • Help • Hope</h2>
+  <p>Service to Humanity is the Greatest Service. Supporting people during medical emergencies, accidents, surgeries and urgent financial hardships.</p>
+  <a href="#donate" class="btn">Donate Now</a>
+  <a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<section>
+  <div class="stats fade">
+    <div class="card stat"><h3>10+</h3><p>People Supported</p></div>
+    <div class="card stat"><h3>1</h3><p>Emergency Cases Helped</p></div>
+    <div class="card stat"><h3>₹0</h3><p>Funds Raised</p></div>
+    <div class="card stat"><h3>1</h3><p>Active Campaigns</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="title">
+    <h2>About Javid Patel Social Trust</h2>
+    <p>Dedicated to helping people in their difficult times.</p>
+  </div>
+  <div class="card about fade">
+    <p>Javid Patel Social Trust is dedicated to helping people during emergencies, medical crises, educational needs and humanitarian causes.</p>
+    <div class="mission">
+      <div class="card"><h3>Mission</h3><p>Helping people in times of need.</p></div>
+      <div class="card"><h3>Vision</h3><p>Creating a compassionate and supportive society.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="case">
+  <div class="title">
+    <h2>Donate for Emergency</h2>
+    <p>Currently active emergency support campaign.</p>
+  </div>
+  <div class="card campaign fade">
+    <img src="altaf-patel.PNG" alt="Altaf Patel">
+    <div class="campaign-content">
+      <span class="tag">Medical Emergency</span>
+      <h2>Help Altaf Patel Recover</h2>
+      <p>Altaf Patel suffered a serious road accident resulting in severe injuries to both legs and is currently undergoing treatment.</p>
+      <div class="info">
+        <div><strong>Patient:</strong><br>Altaf Patel</div>
+        <div><strong>Age:</strong><br>34 Years</div>
+        <div><strong>Village:</strong><br>Lilwadi</div>
+        <div><strong>Hospital:</strong><br>Aadicura Superspeciality Hospital, Vadodara</div>
+      </div>
+      <div class="fund">
+        <p>Required Fund</p>
+        <h3>₹8,00,000 – ₹10,00,000</h3>
+      </div>
+      <a href="#donate" class="btn btn-red">Donate Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="donate">
+  <div class="title">
+    <h2>Support Altaf Patel's Recovery</h2>
+    <p>Scan the QR code or use bank details to donate.</p>
+  </div>
+  <div class="donate-grid">
+    <div class="card qr fade">
+      <img src="qr-png.jpg" alt="UPI QR Code">
+      <h3>Scan & Pay via UPI</h3>
+      <p><strong>UPI ID:</strong> 9867420129@okbizaxis</p>
+      <p><strong>Google Pay:</strong> +91 98674 20129</p>
+      <div class="pay">
+        <span>Google Pay</span><span>PhonePe</span><span>Paytm</span><span>BHIM UPI</span>
+      </div>
+    </div>
+    <div class="card fade">
+      <h3>Bank Details for Donation</h3>
+      <div class="bank-row"><strong>Account Name:</strong> Javid Patel Social Trust</div>
+      <div class="bank-row"><strong>Account Number:</strong> 103022001003745</div>
+      <div class="bank-row"><strong>IFSC Code:</strong> CCBL0209030</div>
+      <div class="bank-row"><strong>Bank Name:</strong> Citizen Cooperative Bank</div>
+      <div class="bank-row"><strong>Branch:</strong> Goregaon East, Mumbai</div>
+      <div class="bank-row"><strong>Account Type:</strong> Current Account</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="title">
+    <h2>Contact Us</h2>
+    <p>Reach out for donation confirmation or support.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="card fade">
+      <h3>Contact Information</h3>
+      <p><strong>Phone:</strong> 98674 20129</p>
+      <p><strong>Email:</strong> <a href="mailto:javid85co@gmail.com">javid85co@gmail.com</a></p><br>
+      <a class="btn" href="https://wa.me/919867420129" target="_blank">Message on WhatsApp</a>
+    </div>
+    <div class="card fade">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email Address">
+        <textarea placeholder="Message"></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>Javid Patel Social Trust</h2>
+  <p>Humanity • Help • Hope</p>
+  <p>Every donation makes a difference.</p>
+  <p>May Allah bless Altaf Bhai with a speedy and complete recovery.</p>
+</footer>
+
+<a href="#donate" class="btn floating-donate">Donate</a>
+<a href="https://wa.me/919867420129" target="_blank" class="whatsapp">WhatsApp</a>
+</body>
+</html>
